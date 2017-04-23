@@ -19,6 +19,7 @@ int calc_line_size(){
 int nums[128];
 int i = 0;
 clock_t start = clock(), diff;
+char* doggy = "hello";
 //initialize the nums array
 for(i = 0; i<128; i++){
     nums[i] = i;
@@ -32,6 +33,12 @@ for(i = 0; i<128; i++){
     printf("%lu\n", diff * 1000000000 / CLOCKS_PER_SEC);
 
 }
+
+start = clock();
+printf("access string:%s: ", doggy);
+diff = clock() - start;
+printf("%lu ns\n", diff * 1000000000 / CLOCKS_PER_SEC);
+
 return 0;
 }//end of calc_line_size
 
